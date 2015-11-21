@@ -1,0 +1,307 @@
+@import 'normalize.styl';
+@import 'reset.styl';
+dark100 = #24242c;
+dark80 = #292c34;
+dark60 = #47474e;
+dark40 = #97999b;
+yellow100 =#e0ad2f;
+yellowButton = #ffb600;
+grayText = #97999b;
+
+cta()
+	border 1px solid white
+	border-radius 5px
+	padding-top 1rem
+	padding-bottom 1.12rem
+	text-align center
+	font-size 0.81rem
+	width 10rem
+	display block
+	margin 0 auto 0 auto
+	text-decoration none
+
+body
+	background-color dark80
+	font-family 'Open Sans', san-serif
+	font-size 16px
+.container
+	width 100%
+	padding-top 94px
+	transition width 0.4s ease
+/*--header--*/
+.header
+	width 100%
+	background-color dark100
+	height 94px
+	position fixed
+	top 0
+	left 0
+	z-index 20
+	&__mobile
+		background-color dark100
+		display flex
+		justify-content space-between
+		height 94px
+		padding-left 1rem
+		padding-right 1rem
+		align-items center
+	&--light
+		background-color white
+	&__logo
+		color white
+		line-height 94px
+	&__btnMenu
+		background-color dark100
+		height 30px
+		border 0
+		color white
+		&:focus
+			outline 0 !important
+	&__menu__navbar
+		background-color dark100
+	&__menu__list
+		height 0
+		overflow hidden
+		transition height 0.4s ease
+		&__item
+			list-style-type none
+			margin-top 1rem
+			padding-left 1rem
+			padding-right 1rem
+			a 
+				color white
+				text-decoration none
+				transition color 300ms ease-in
+				&:hover
+					color yellow100
+			&::after
+				font-family 'FontAwesome'
+				content "\f105"
+				padding-left 0.3rem
+				color white
+		&--show
+			height 180px
+			background-color dark100
+/*--hero--*/
+.hero
+	/*background url("../img/fish-hd.jpg") no-repeat center center fixed
+	background-size cover*/
+	background-color yellow100
+	text-align center
+	padding 10rem 1rem 7.8rem 1rem
+	&__title
+		color white
+		font-size 2.18rem
+		margin-bottom 1.85rem
+		font-weight 400
+		text-shadow 1px 1px 1px dark80
+	&__text
+		margin-bottom 2.68rem
+		font-size 0.93rem
+	&__button
+		cta()
+		color white
+		background-color dark100
+		transition background 300ms ease-in
+		&::after
+			font-family 'FontAwesome'
+			content "\f105"
+			padding-left 0.3rem
+		&:hover
+			background-color yellowButton
+/*--Products--*/
+.products
+	background-color white
+	padding-left 2rem
+	padding-right 2rem
+	&__product
+		width 100%
+		padding-top 1.56rem
+		&__img
+			width 100%
+			img
+				width 100%
+				height auto
+				display block
+				margin-bottom 1.43rem
+		&__title
+			font-size 1.25rem
+			font-weight 600
+			margin-bottom 0.87rem
+		&__place
+			color dark40
+			font-size 0.81rem
+			margin-bottom 1.62rem
+			display block
+			&::before
+				font-family 'FontAwesome'
+				content "\f041"
+				padding-right 0.3rem
+		&__description
+			font-size 0.81rem
+			color dark40
+			line-height 1.5rem
+			margin-bottom 1rem
+		&__price
+			font-weight 600
+			font-size 1.25rem
+			display block
+		&__button
+			width 40%
+			border-radius 5px
+			background-color dark100
+			text-align center
+			color yellowButton
+			text-decoration none
+			display block
+			padding 0.68rem 0
+			font-size 0.81rem
+			margin 1rem auto
+			transition width 0.4s ease
+			&:hover
+				background-color yellowButton
+				color dark100
+				width 70%
+		&:last-child
+			padding-bottom 1.56rem
+/*--Interactive--*/
+.interactive
+	background-color dark60
+	padding-top 6.25rem
+	padding-bottom 3.93rem
+	text-align center
+	&__title
+		color white
+		font-size 2.8rem
+		font-weight 300
+		margin-bottom 2.6rem
+		span 
+			color yellow100
+	&__button
+		cta()
+		color white
+		background-color yellowButton
+		transition background 300ms ease-in
+		&::after
+			font-family 'FontAwesome'
+			content "\f105"
+		&:hover
+			background-color dark100
+/*--Offers--*/
+.offers
+	width 100%
+	background-color white
+	&__product
+		display flex
+		flex-direction column
+		&__img
+			img
+				width 100%
+				height auto
+				display block
+		&__text
+			width 75%
+			margin 0 auto
+			padding-top 2rem
+			padding-bottom 2rem
+/*--Footer--*/
+.footer
+	background-color dark100
+	color dark40
+	padding 2.68rem 0
+	font-size 0.81rem
+	padding-right 1rem
+	padding-left 1rem
+	display flex
+	justify-content space-between
+	&__text
+		a
+			color @color
+			text-decoration none
+	&__social__list
+		border 0
+		&__item
+			list-style-type none
+			display inline
+			padding-left 15px
+			a 
+				text-decoration none
+				color dark40
+@media (max-width:768px)
+	.products__product__button
+		width 100%
+	.offers
+		width 100%
+		background-color white
+		&__product
+			display flex
+			flex-direction column
+			&__img
+				order 1
+			&__text
+				order 2
+				padding-left 3rem
+				padding-right 3rem
+@media (min-width:768px)
+	.header
+		width 100%
+		display flex
+		justify-content space-between
+		overflow visible
+		align-items center
+		&__mobile
+			order 1
+		&__menu__navbar
+			order 2
+		&__btnMenu
+			display none
+		&__menu__list
+			display block
+			height 100%
+			&__item
+				list-style-type none
+				display inline-block
+				font-weight 300
+				color dark40
+				&::after
+					content none
+	.products
+		background-color white
+		padding-left 2rem
+		padding-right 2rem
+		display flex
+		flex-direction row
+		flex-wrap wrap
+		justify-content space-between
+		&__product
+			width 30%
+			padding-top 1.56rem
+			&__button
+				width 60%
+	.offers
+		width 100%
+		background-color white
+		&__product
+			display flex
+			flex-direction row
+			align-items center
+			&__img
+				width 50%
+			&__text
+				width 50%
+				padding-left 3rem
+				padding-right 3rem
+		
+@media (min-width:1200px)
+	.container
+		width 90%
+		margin 0 auto
+		padding-top 0px
+	.header
+		width 100%
+		background-color dark100
+		height 94px
+		position relative
+		top 0
+		left 0
+		z-index 20
